@@ -192,8 +192,6 @@ function Keysys:MakeUI(KeySettings)
                     :
                     Play()
                 wait(0.51)
-                writefile(KeySettings.Title .. ".txt", KeyMain.Input.InputBox.Text)
-                local readfilekey = readfile(KeySettings.Title .. ".txt");
                 if KeyMain.Input.InputBox.Text == game:HttpGet("https://1.kelprepl.repl.co/verify/".. KeySettings.KeyLinkName .."?verify_key=" .. KeyMain.Input.InputBox.Text) then -- checkkey no have file
                     loadstring(game:HttpGet(KeySettings.ScriptLink))()
                     appendfile(KeySettings.Title .. ".txt", KeyMain.Input.InputBox.Text);
@@ -313,7 +311,7 @@ function Keysys:MakeUI(KeySettings)
                     notif:Notification("Warning", "Key not valid try again", 3)
                 end
             end
-        end
+        end)
 
 
     KeyUI.Main.Input.MouseEnter:Connect(function()
@@ -327,7 +325,7 @@ function Keysys:MakeUI(KeySettings)
     end)
     end
 
-    AddDraggingFunctionality(KeyMain, KeyUI.Main)
-end
+    --AddDraggingFunctionality(KeyMain, KeyUI.Main)
+--end)
 
 return Keysys
