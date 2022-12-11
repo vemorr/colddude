@@ -146,7 +146,6 @@ function Keysys:MakeUI(KeySettings)
 
     --key valid
     KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
-        else
             if KeyMain.Input.InputBox.Text ==
                 game:HttpGet("https://1.kelprepl.repl.co/verify/".. KeySettings.KeyLinkName .."?verify_key=" .. KeyMain.Input.InputBox.Text) then
                 TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Quint), { BackgroundTransparency = 1 })
@@ -315,7 +314,7 @@ function Keysys:MakeUI(KeySettings)
                 end
             end
         end
-    end)
+
 
     KeyUI.Main.Input.MouseEnter:Connect(function()
         TweenService:Create(KeyUI.Main.Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint),
@@ -326,6 +325,7 @@ function Keysys:MakeUI(KeySettings)
         TweenService:Create(KeyUI.Main.Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint),
             { Color = Color3.fromRGB(35, 35, 35) }):Play()
     end)
+    end
 
     AddDraggingFunctionality(KeyMain, KeyUI.Main)
 end
