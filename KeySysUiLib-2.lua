@@ -326,7 +326,6 @@ function Keysys:MakeUI(KeySettings)
         TweenService:Create(KeyUI.Main.Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint),
             { Color = Color3.fromRGB(35, 35, 35) }):Play()
     end)
-    end
 
     AddDraggingFunctionality(KeyMain, KeyUI.Main)
 end
